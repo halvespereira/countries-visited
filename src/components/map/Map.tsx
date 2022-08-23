@@ -1,9 +1,8 @@
-import "./App.css";
 import esMill from "@react-jvectormap/world/dist/worldMill.json";
 import { VectorMap } from "@react-jvectormap/core";
 import { useRef, useState } from "react";
 
-function App() {
+function Map() {
   const mapRef = useRef();
   const [countriesSelected, setCountriesSelected] = useState<string[]>([]);
   function handleSelected(event: any, code: string) {
@@ -35,4 +34,4 @@ function App() {
   );
 }
 
-export default App;
+export default Map;
