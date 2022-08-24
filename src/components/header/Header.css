@@ -1,0 +1,15 @@
+.__Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+  background-color: #a4c3b2;
+  height: 70px;
+}
+
+.__HeaderTitle {
+  font-size: 28px;
+  font-weight: bolder;
+  color: #fff;
+}

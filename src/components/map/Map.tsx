@@ -1,24 +1,15 @@
 import esMill from "@react-jvectormap/world/dist/worldMill.json";
 import { VectorMap } from "@react-jvectormap/core";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { useMapContext } from "../../context/map";
+import "./Map.css";
 
 function Map() {
   const mapRef = useRef();
-  const [countriesSelected, setCountriesSelected] = useState<string[]>([]);
-  function handleSelected(event: any, code: string) {
-    setCountriesSelected((prev) =>
-      prev.includes(code)
-        ? prev.filter((c: string) => c !== code)
-        : [...prev, code]
-    );
-  }
-
-  function handleSave() {
-    console.log(countriesSelected);
-  }
+  const { handleCountrySelected } = useMapContext();
 
   return (
-    <div style={{ width: 1500, height: 800, borderRadius: "15px" }}>
+    <div className="__Map">
       <VectorMap
         map={esMill}
         zoomAnimate
@@ -26,10 +17,24 @@ function Map() {
         zoomOnScroll
         regionsSelectable
         selectedRegions={[]}
-        onRegionSelected={handleSelected}
-        backgroundColor="#c2dfff"
+        onRegionSelected={handleCountrySelected}
+        regionStyle={{
+          initial: {
+            fill: "#f6fff8",
+            fillOpacity: 1,
+            stroke: "ActiveBorder",
+          },
+          hover: {
+            fillOpacity: 0.8,
+          },
+          selected: {
+            fill: "#6b9080",
+          },
+          selectedHover: {
+            fillOpacity: 0.8,
+          },
+        }}
       />
-      <button onClick={handleSave}>Save</button>
     </div>
   );
 }

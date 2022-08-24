@@ -1,5 +1,7 @@
+import "./Footer.css";
+
 function Footer() {
-  return <div>Footer</div>;
+  return <footer className="__Footer">Dboa Technologies, LLC</footer>;
 }
 
 export default Footer;

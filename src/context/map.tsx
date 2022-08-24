@@ -1,31 +1,37 @@
 import { createContext, useContext, useState } from "react";
-// import LoaderContextHook from "../domain/interfaces/LoaderContextHook";
+import MapContextHook from "../domain/interfaces/MapContextHook";
 
 const MapContext = createContext(undefined);
 
 export function MapProvider(props: any) {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>("");
+  const [countriesSelected, setCountriesSelected] = useState<string[]>([]);
 
-  function startLoader(message?: string): void {
-    setIsLoading(true);
-    if (message) {
-      setMessage(message);
-    }
+  function addCountry(code: string) {
+    setCountriesSelected((prev: string[]) => [...prev, code]);
   }
 
-  function stopLoader() {
-    setIsLoading(false);
-    setMessage("");
+  function removeCountry(code: string) {
+    setCountriesSelected((prev: string[]) =>
+      prev.filter((c: string) => c !== code)
+    );
   }
+
+  function handleCountrySelected(element: any, code: string) {
+    setCountriesSelected((prev) =>
+      prev.includes(code)
+        ? prev.filter((c: string) => c !== code)
+        : [...prev, code]
+    );
+  }
+
   return (
     <MapContext.Provider
       value={
         {
-          startLoader,
-          stopLoader,
-          isLoading,
-          message,
+          countriesSelected,
+          addCountry,
+          removeCountry,
+          handleCountrySelected,
         } as any
       }
     >
@@ -34,11 +40,11 @@ export function MapProvider(props: any) {
   );
 }
 
-// export function useLoaderContext(): LoaderContextHook {
-//   const context = useContext(MapContext);
+export function useMapContext(): MapContextHook {
+  const context = useContext(MapContext);
 
-//   if (!context)
-//     throw new Error("useLoaderContext must be used inside a MapProvider");
+  if (!context)
+    throw new Error("useMapContext must be used inside a MapProvider");
 
-//   return context;
-// }
+  return context;
+}

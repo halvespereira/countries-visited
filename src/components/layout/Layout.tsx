@@ -1,5 +1,7 @@
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
+import "./Main.css";
 
 type Props = {
   children: any;
@@ -7,11 +9,16 @@ type Props = {
 
 function Layout({ children }: Props) {
   return (
-    <>
-      <Header />
-      <div>{children}</div>
-      <Footer />
-    </>
+    <ThemeProvider
+      breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
+      minBreakpoint="xxs"
+    >
+      <div className="__Layout">
+        <Header />
+        <div className="__Main">{children}</div>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

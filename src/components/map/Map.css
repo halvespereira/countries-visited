@@ -1,0 +1,75 @@
+.__Map {
+  width: 75%;
+  height: 660px;
+}
+
+@media screen and (max-width: 1300px) {
+  .__Map {
+    height: 550px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .__Map {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .__Map {
+    height: 500px;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .__Map {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .__Map {
+    height: 400px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .__Map {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .__Map {
+    height: 300px;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .__Map {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .__Map {
+    height: 200px;
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .__Map {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .__Map {
+    height: 100px;
+  }
+}

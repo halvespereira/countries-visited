@@ -1,0 +1,17 @@
+.__PrimaryButton {
+  background: #6b9080 !important;
+  border-color: #6b9080 !important;
+  color: #fff !important;
+}
+
+.__PrimaryButton:hover,
+.__PrimaryButton:active,
+.__PrimaryButton:focus,
+.__PrimaryButton:focus-visible {
+  background: #cce3de !important;
+  border-color: #cce3de !important;
+  color: #6b9080 !important;
+  outline: #cce3de !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
+}

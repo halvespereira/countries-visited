@@ -1,0 +1,18 @@
+.__Layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+.__Main {
+  background: #eaf4f4;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 70px;
+  bottom: 70px;
+}
