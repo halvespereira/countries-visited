@@ -16,6 +16,10 @@ export function MapProvider(props: any) {
     );
   }
 
+  function setCountries(countries: string[]) {
+    setCountriesSelected(countries);
+  }
+
   function handleCountrySelected(element: any, code: string) {
     setCountriesSelected((prev) =>
       prev.includes(code)
@@ -29,6 +33,7 @@ export function MapProvider(props: any) {
       value={
         {
           countriesSelected,
+          setCountries,
           addCountry,
           removeCountry,
           handleCountrySelected,

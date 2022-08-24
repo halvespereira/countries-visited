@@ -4,10 +4,11 @@ import "./Button.css";
 type Props = {
   text: string;
   size?: "lg" | "sm";
+  onClick?: () => void;
 };
-function PrimaryButton({ text, size }: Props) {
+function PrimaryButton({ text, size, onClick }: Props) {
   return (
-    <Button size={size} className="__PrimaryButton">
+    <Button onClick={onClick} size={size} className="__PrimaryButton">
       {text}
     </Button>
   );

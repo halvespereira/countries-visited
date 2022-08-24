@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^1.10.2",
     "@react-jvectormap/core": "^1.0.3",
     "@react-jvectormap/world": "^1.1.2",
     "@testing-library/jest-dom": "^5.16.5",
@@ -12,6 +13,7 @@
     "@types/node": "^16.11.54",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "jquery": "^3.6.0",
     "react": "^18.2.0",
